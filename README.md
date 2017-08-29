@@ -1,5 +1,7 @@
 阿里云Prismplayer播放器直播点播在PC端和移动端的综合例子
 
+[体验demo](https://player.alicdn.com/prismplayer/)
+
 ## 桌面版
 
 ![桌面版](https://player.alicdn.com/img/pclive1.png) ![桌面版](https://player.alicdn.com/img/pclive2.png)
