@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <meta charset="utf-8">
+  <title>prismplayer播放器</title>
+  <body>
+    ${require('./component/header/header.html')}
+    <div class="content">
+      <div class="mask">
+        <div class="contain clearfix">
+          ${require('./component/video/video.html')}
+          <div class="rightbar">
+            ${require('./component/listheader/listheader.html')}
+            ${require('./component/videolist/videolist.html')}
+            ${require('./component/chat/chat.html')}
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>阿里云提供技术支持</footer>
+  </body>
+</html>
