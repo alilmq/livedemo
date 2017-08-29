@@ -15,10 +15,6 @@ $(()=>{
     console.log('params isnt exist!');
     return;
   }
-  if(search.code)
-  {
-
-  }
   let element = (
     <App streamName={search.key}>
     </App>

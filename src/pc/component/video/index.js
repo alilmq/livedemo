@@ -1,52 +1,77 @@
 require('./video.scss');
-require('CKobject');
 
-export default class video {
-  static setup(data){
+export default class Video {
+  constructor(data) {
     if (data.name) {
-      $('.video_title h3').html(data.name);
+      $('.video-title h3').html(data.name);
     }
 
-    if (data.showOnline) {
-      $('.online span').html(data.OnlineNum);
-    } else {
-      $('.online').hide();
+    $('.online span').html(data.OnlineNum);
+    this.setupPlayer(data)
+  }
+
+  play(data)
+  {
+    if (data.name) {
+      $('.video-title h3').html(data.name);
+    }
+    if(!this.player || (this.isLiving != (data.liveStatus == 1)))
+    {
+      if(this.player)
+      {
+        this.player.dispose();
+        $('#J_prismPlayer').empty();
+      }
+      this.setupPlayer(data);
+    }
+    else
+    {
+      this.player.loadByUrl(data.m3u8PlayUrl);
     }
   }
 
 
-  static initFlash(isLiving, coverImg, src){
-    var flashvars, params;
-    if (!isLiving) {//结束视频
-      flashvars = {
-        f: 'http://common.qupai.me/base/lib/ckplayer/m3u8.swf',
-        a: src,
-        c: 0,
-        s: 4,
-        lv: 0,
-        i: coverImg,
-        p: 1
-      };
-    } else {//正在直播
-      flashvars = {
-        f: src,
-        c: 0,
-        s: 0,
-        b: 1,
-        lv: 1,
-        i: coverImg,
-        p: 1
-      };
-      
-      
+  setupPlayer(data){
+    this.isLiving = data.liveStatus == 1;
+    let isFlash = Video.isFlash(data.m3u8PlayUrl);
+    this.player = new prismplayer({
+    id: "J_prismPlayer",
+         autoplay: true,
+         isLive:this.isLiving,
+         playsinline:true,
+         width:"100%",
+         height:"407px",
+         controlBarVisibility:"always",
+         useH5Prism:!isFlash,
+         useFlashPrism:isFlash,
+         source:data.m3u8PlayUrl,
+         cover:data.coverUrl                 
+    });
+  }
+
+
+
+  static isFlash(src)
+  {
+    if(src.indexOf('.flv')>-1 || src.indexOf('rtmp')>-1)
+    {
+      return true;
     }
-    params = {
-      bgcolor: '#FFF',
-      allowFullScreen: true,
-      allowScriptAccess: 'always',
-      wmode: 'transparent'
-    };
-    return CKobject.embedSWF('http://common.qupai.me/base/lib/ckplayer/ckplayer.swf', 'player', 'ckplayer_a1', '748', '407', flashvars, params);
+
+    let video = document.createElement('video');
+    var hasVideo = !!(video.canPlayType);
+    if(!hasVideo)
+    {
+      return true;
+    }
+    if(src.indexOf('.m3u8')>-1 && video.canPlayType('application/x-mpegURL')=="")
+    {
+      return true;
+    }
+
+
+
+    return false;
   }
 
 }

@@ -1,22 +1,23 @@
 require('./chat.scss');
+const chatItem = require('./chatitem.html');
 
-$('.emoji_btn').on('click',function(){
-  if($('.emoji_pop').css('display')=='block'){
-    $('.emoji_pop').hide();
-  }else{
-    $('.emoji_pop').show();
-  }
-});
+export default class Chat
+{
+	static setup(useInfo)
+	{
+		let wrapper = $('.msg-list');
+		$('.send-btn').click(()=>{
+			let text = $('.send-txt').val();
+			let $item = $(chatItem);
+			$item.find('.avatar').attr('src', useInfo.avatar);
+			$item.find('.nick').text(useInfo.nickName);
+			$item.find('.txt').text(text);
+			wrapper.append($item);
+			$('.send-txt').val("");
+		})
+	}
+}
 
-
-$('#send_txt').on('input propertychange', function(){//!IE--input;IE--propertychange(未测试)
-  console.log('it is changed');
-});
-let str=$('#send_txt').html();
-let reg1 = new RegExp('<img', 'g');
-let imgNum = str.match(reg1).length;
-let s = str.replace(/<img.*?>/g,"");//原字符串值不变
-let curLength = s.length+imgNum*2;
 
   
 

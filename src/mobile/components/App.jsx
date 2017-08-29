@@ -24,14 +24,14 @@ export default class App extends React.Component{
   }
 
   selectedItemCallback(item){
-    this._retrieveData(item.streamName)
+    this.setState({liveInfo:item,currentStreanName:item.streamName}); 
   }
 
   _retrieveData(streamName){
     let liveInfo,list;
     service.getLiveInfo(streamName,(data)=>{
       liveInfo = data;
-      service.getLiveHistory(streamName,1,(data)=>{
+      service.getLiveHistory(streamName,(data)=>{
         list = data;
         if(liveInfo)
         {

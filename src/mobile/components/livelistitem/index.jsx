@@ -7,10 +7,6 @@ export default class LiveListItem extends React.Component
     this.handleClick = this.handleClick.bind(this);
   }
 
-  static propTypes = {
-    itemData: React.PropTypes.object
-  };
-
   handleClick(){
     this.props.selectedItemCallback(this.props.itemData);
   }

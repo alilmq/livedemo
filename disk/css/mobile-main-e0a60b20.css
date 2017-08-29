@@ -86,12 +86,6 @@ p {
 .live-video-container {
   height: 5.625rem;
   width: 100%; }
-video::-webkit-media-controls {
-  display: none !important; }
-
-.live-video {
-  position: relative;
-  left: 0%; }
 .list-header {
   background: #FFFFFF;
   box-shadow: inset 0 -1px 0 0 #E6E6E6;
@@ -138,6 +132,12 @@ html[data-dpr="3"] .list-header .online-info {
 @media all and (min-device-width: 1024px) {
   .list-header .online-info {
     font-size: 24px; } }
+video::-webkit-media-controls {
+  display: none !important; }
+
+.live-video {
+  position: relative;
+  left: 0%; }
 .live-list-item {
   width: 9.375rem;
   height: 2.375rem;
@@ -224,4 +224,4 @@ html[data-dpr="3"] .list-header .online-info {
       .live-list-item .list-item-info .list-item-info .live-audience-info {
         font-size: 20px; } }
 
-/*# sourceMappingURL=mobile-main-fc225407.css.map*/
+/*# sourceMappingURL=mobile-main-e0a60b20.css.map*/

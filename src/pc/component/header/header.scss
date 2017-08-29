@@ -4,13 +4,13 @@ header .contain{
   margin:0 auto;
 }
 
-.head_right a{
+.head-right a{
   color: #fff;
 }
 
-.head_right{
+.head-right{
   float:right;
-  .head_title{
+  .head-title{
     display: inline-block;
     width:64px;
     text-align: center;
@@ -54,7 +54,7 @@ header .contain{
     text-align: center;
     cursor: pointer;
   }
-  .login .head_title{
+  .login .head-title{
     overflow: hidden;
     //white-space: nowrap;
     text-overflow: ellipsis;
@@ -75,7 +75,7 @@ header .contain{
   text-align: center;
   padding:0 0 7px;
   color: #7C8096;
-  .sweep_code{
+  .sweep-code{
     border-top: 1px solid #373C51;
     width:80px;
     height:94px;
@@ -124,7 +124,7 @@ header .contain{
   width:100%;
 }
 
-.dtcode_tit{
+.dtcode-tit{
   font-size:20px;
   padding:11px 0 18px;
 }

@@ -1,13 +1,21 @@
 require('./listheader.scss');
 
-$('.list_title h3').on('click', function(){
-  $('.list_title h3').removeClass('active');
-  $(this).addClass('active');
-  if($(this).hasClass('historyhead')){
-    $('.chat_area').hide();
-    $('.list_area').show();
-  }else{
-    $('.list_area').hide();
-    $('.chat_area').show();
-  }
-});
+export default class ListHeader
+{
+	static setup()
+	{
+	    $('.live-list-title h3').on('click', function(){
+		  $('.live-list-title h3').removeClass('active');
+		  $(this).addClass('active');
+		  if($(this).hasClass('live-history-head')){
+		    $('.live-chat-area').hide();
+		    $('.live-list-area').show();
+		  }else{
+		    $('.live-list-area').hide();
+		    $('.live-chat-area').show();
+		  }
+        });
+	}
+
+
+}

@@ -109,6 +109,12 @@ export default class Util {
     return false;
   }
 
+  static timeFormat(timestamp){
+    let date = new Date(timestamp);
+    let t = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+    return t
+  }
+
   static formatDateToDesc(time) {
     let now = new Date(),
       nowTime = now.getTime(),
@@ -276,12 +282,15 @@ export default class Util {
       console.log('key isnt exist!');
       return;
     }
+    let url = window.location.href;
     if (!!$.os.phone) {
-      if (Util.isWeixin5()) {
-        window.location.herf = config.wx.authUrl.replace('?', search.key);
+      if (url.indexOf('mobile.html')<0 ) {
+        window.location.href = "/demo/live/mobile.html?" + "key=" + search.key;
       }
     } else {
-      window.location.herf = "/pc/index.html?" + "key=" + search.key;
+      if (url.indexOf('pc.html')<0) {
+         window.location.href = "/demo/live/pc.html?" + "key=" + search.key;
+      }
     }
   }
 

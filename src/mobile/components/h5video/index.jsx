@@ -23,8 +23,6 @@ export default class H5Video extends React.Component
       cover: 'http://liveroom-img.oss-cn-qingdao.aliyuncs.com/logo.png'
   };
 
-  static propTypes = {
-  };
 
   componentDidUpdate() {
     if(!this.player)

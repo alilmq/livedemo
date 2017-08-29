@@ -2,16 +2,17 @@
 <html lang="zh-CN">
   <meta charset="utf-8">
   <title>prismplayer播放器</title>
+  <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/1.9.9/skins/default/index.css" />
   <body>
-    ${require('./component/header/header.html')}
+    ${require('./component/header/index.html')}
     <div class="content">
       <div class="mask">
         <div class="contain clearfix">
-          ${require('./component/video/video.html')}
+          ${require('./component/video/index.html')}
           <div class="rightbar">
-            ${require('./component/listheader/listheader.html')}
-            ${require('./component/videolist/videolist.html')}
-            ${require('./component/chat/chat.html')}
+            ${require('./component/listheader/index.html')}
+            ${require('./component/livelist/index.html')}
+            ${require('./component/chat/index.html')}
           </div>
         </div>
       </div>

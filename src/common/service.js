@@ -3,7 +3,7 @@ import util from './util';
 
 const mockData= [{
       streamName: 0,
-      name: '1号直播间',
+      name: '马云讲新零售',
       coverUrl: 'http://player.alicdn.com/cover/cover3.png',
       m3u8PlayUrl: 'http://player.alicdn.com/video/11.mp4',
       description: '马云讲新零售',
@@ -12,6 +12,7 @@ const mockData= [{
       createTime: '2019-9-8'
     },{
         streamName: 1,
+        name: '多乐多滋',
         coverUrl: 'http://player.alicdn.com/cover/cover2.png',
         m3u8PlayUrl: 'http://player.alicdn.com/video/1.mp4',
         description: '多乐多滋',
@@ -20,6 +21,7 @@ const mockData= [{
         createTime: '2011-9-8'
       }, {
         streamName: 2,
+        name: '8秒的旅行',
         coverUrl: 'http://player.alicdn.com/cover/cover1.png',
         m3u8PlayUrl: 'http://common.qupai.me/player/qupai.mp4',
         description: '现在开始8秒的旅行',
@@ -28,6 +30,7 @@ const mockData= [{
         createTime: '2017-9-8'
       },{
         streamName: 3,
+        name: '多乐多滋',
         coverUrl: 'http://player.alicdn.com/cover/cover2.png',
         m3u8PlayUrl: 'http://player.alicdn.com/video/1.mp4',
         description: '多乐多滋',
@@ -36,6 +39,7 @@ const mockData= [{
         createTime: '2012-9-8'
       }, {
         streamName: 4,
+        name: '8秒的旅行',
         coverUrl: 'http://player.alicdn.com/cover/cover1.png',
         m3u8PlayUrl: 'http://common.qupai.me/player/qupai.mp4',
         description: '现在开始8秒的旅行',
@@ -68,11 +72,10 @@ export default class Service {
     }*/
   }
 
-  static getLiveHistory(streamName, page, callback) {
+  static getLiveHistory(streamName, callback) {
     // let params = {
     //   action: 'GET /live/history',
     //   streamName: streamName,
-    //   page: page
     // }
     // Request.request(params, {success: function(){
     //   if(d.code == 200 && d.data){
@@ -80,7 +83,6 @@ export default class Service {
     //   }
     // }});
 
-    if (page == 1) {
       let data1 = mockData[1],
       data2 = mockData[2];
       if(streamName==1)
@@ -92,14 +94,6 @@ export default class Service {
         data2 = mockData[0];
       }
       callback([data1, data2]);
-    }
-
-    if (page == 2) {
-     let data1 = mockData[3],
-      data2 = mockData[4];
-      callback([data1, data2]);
-    }
-
   }
 
 }

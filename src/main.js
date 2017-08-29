@@ -4,5 +4,4 @@ require('zepto');
 require('./main.scss');
 $(() => {
   util.redirectByDevice();
- 
 });
