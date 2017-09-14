@@ -278,18 +278,18 @@ export default class Util {
 
   static redirectByDevice() {
     let search = Util.QueryString(window.location.href);
+    let key = 0;
     if (!search || !search.key) {
-      console.log('key isnt exist!');
-      return;
+      key = search.key;
     }
     let url = window.location.href;
     if (!!$.os.phone) {
       if (url.indexOf('mobile.html')<0 ) {
-        window.location.href = "/demo/live/mobile.html?" + "key=" + search.key;
+        window.location.href = "/demo/live/mobile.html?" + "key=" + key;
       }
     } else {
       if (url.indexOf('pc.html')<0) {
-         window.location.href = "/demo/live/pc.html?" + "key=" + search.key;
+         window.location.href = "/demo/live/pc.html?" + "key=" + key;
       }
     }
   }
