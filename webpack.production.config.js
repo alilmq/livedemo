@@ -15,7 +15,7 @@ let config = Merge.smart(baseWebpackConfig, {
   output: {
     path: __dirname + '/disk',
     publicPath: '',
-    filename: 'js/[name]-main-[hash:8].min.js'
+    filename: 'js/[name].main.min.js'
   },
   module: {
     rules: [{
@@ -23,7 +23,10 @@ let config = Merge.smart(baseWebpackConfig, {
       include: path.resolve(__dirname, 'src'),
       loader: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader","postcss-loader","sass-loader"]
+          use: [{loader: 'css-loader',
+                options: {
+                  minimize: true
+                }},"postcss-loader","sass-loader"]
         })
     }]
   },
@@ -39,12 +42,12 @@ let config = Merge.smart(baseWebpackConfig, {
         warnings: false
       }
     }),
-    new ExtractTextPlugin("css/[name]-main-[hash:8].css"),
+    new ExtractTextPlugin("css/[name].main.css"),
     new HtmlWebpackPlugin({
       filename: 'pc.html',
       template: './src/pc/index.html',
       inject: 'body',
-      hash: false,
+      hash: true,
       minify: { //压缩HTML文件
         removeComments: true, //移除HTML中的注释
         collapseWhitespace: true //删除空白符与换行符
@@ -55,7 +58,7 @@ let config = Merge.smart(baseWebpackConfig, {
       filename: 'mobile.html',
       template: './src/mobile/index.html',
       inject: 'body',
-      hash: false,
+      hash: true,
       minify: { //压缩HTML文件
         removeComments: true, //移除HTML中的注释
         collapseWhitespace: true //删除空白符与换行符
@@ -66,7 +69,7 @@ let config = Merge.smart(baseWebpackConfig, {
       filename: 'index.html',
       template: './src/index.html',
       inject: 'body',
-      hash: false,
+      hash: true,
       minify: { //压缩HTML文件
         removeComments: true, //移除HTML中的注释
         collapseWhitespace: true //删除空白符与换行符
