@@ -78,11 +78,11 @@ module.exports = {
       }
     }),
     new OpenBrowserPlugin({
-      url: 'http://localhost:8081'
+      url: 'http://localhost:8081?env=dev'
     }),
     new webpack.ProvidePlugin({
       "$": "zepto",
-      "prismplayer": "prismplayer"
+      "Aliplayer": "Aliplayer"
     }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackExternalsPlugin([{
@@ -90,9 +90,9 @@ module.exports = {
       var: 'Zepto',
       url: 'https://common.qupai.me/player/lib/zepto.min.js'
     }, {
-      name: 'prismplayer',
-      var: 'prismplayer',
-      url: 'https://g.alicdn.com/de/prismplayer/1.9.9/prism-min.js'
+      name: 'Aliplayer',
+      var: 'Aliplayer',
+      url: 'https://g.alicdn.com/de/prismplayer/2.0.1/aliplayer-min.js'
     }], {
       // Resolve local modules relative to this directory
       basedir: __dirname

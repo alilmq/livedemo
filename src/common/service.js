@@ -5,7 +5,7 @@ const mockData= [{
       streamName: 0,
       name: '马云讲新零售',
       coverUrl: 'http://player.alicdn.com/cover/cover3.png',
-      m3u8PlayUrl: 'http://player.alicdn.com/video/11.mp4',
+      m3u8PlayUrl: 'http://common.qupai.me/video/aliyunmedia.mp4 ',
       description: '马云讲新零售',
       OnlineNum: 80,
       liveStatus:1, //1直播 2点播

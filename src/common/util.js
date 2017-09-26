@@ -276,15 +276,22 @@ export default class Util {
   //   return userIdentifierId;
   // }
 
+  static isDev()
+  {
+    let search = Util.QueryString(window.location.href);
+    return search.env == 'dev';
+  }
+
   static redirectByDevice() {
     let search = Util.QueryString(window.location.href);
     let key = 0;
     if (!search || !search.key) {
       key = search.key;
     }
+    alert(search.env);
     let url = window.location.href;
     if (!!$.os.phone) {
-      if (url.indexOf('mobile.html')<0 ) {
+      if (url.indexOf('mobile.html')<0) {
         window.location.href = "/demo/live/mobile.html?" + "key=" + key;
       }
     } else {

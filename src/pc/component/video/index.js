@@ -34,7 +34,7 @@ export default class Video {
   setupPlayer(data){
     this.isLiving = data.liveStatus == 1;
     let isFlash = Video.isFlash(data.m3u8PlayUrl);
-    this.player = new prismplayer({
+    this.player = new Aliplayer({
     id: "J_prismPlayer",
          autoplay: true,
          isLive:this.isLiving,

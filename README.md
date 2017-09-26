@@ -1,6 +1,10 @@
-## 阿里云Prismplayer播放器直播点播在PC端和移动端的综合例子
+## 阿里云Aliplayer播放器直播点播在PC端和移动端的综合例子
 
-[体验demo](https://player.alicdn.com/prismplayer/)
+包含播放、播放列表、评论、客户端长连接mqtt、支持在android微信全屏H5同层播放，解决android微信弹出全屏播放的问题等功能， 
+
+根据设备类型自定选择移动版本和桌面版播放。
+
+[体验demo](https://player.alicdn.com)
 
 ## 桌面版
 

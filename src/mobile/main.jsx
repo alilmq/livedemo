@@ -5,7 +5,7 @@ import util from '../common/util';
 
 require('./main.scss');
 $(()=>{
-  if (!$.os.phone)
+  if (!$.os.phone && !util.isDev())
   {
     util.redirectByDevice();
     return;

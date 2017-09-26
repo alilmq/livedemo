@@ -15,7 +15,7 @@ $(() => {
    {
       streamName = search.key;
    }
-  if ($.os.phone)
+  if ($.os.phone  && !util.isDev())
   {
     util.redirectByDevice();
     return;

@@ -20,6 +20,9 @@ export default class H5Video extends React.Component
       source:"",
       useH5Prism:true,
       useFlashPrism:false,
+      x5_video_position:'top',
+      //prismplayer 2.0.1版本支持的属性，主要用户实现在android 微信上的同层播放
+      x5_type:'h5', //
       cover: 'http://liveroom-img.oss-cn-qingdao.aliyuncs.com/logo.png'
   };
 
@@ -65,7 +68,7 @@ export default class H5Video extends React.Component
     props.isLive = this.props.liveInfo.liveStatus == 1;
     this.isLiving = props.isLive;
     props.cover = this.props.liveInfo.coverUrl;
-    this.player = new prismplayer(props);
+    this.player = new Aliplayer(props);
 
     this.player.on('play',()=>{
       console.log('play');
