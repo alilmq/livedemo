@@ -288,7 +288,7 @@ export default class Util {
     if (!search || !search.key) {
       key = search.key;
     }
-    alert(search.env);
+
     let url = window.location.href;
     if (!!$.os.phone) {
       if (url.indexOf('mobile.html')<0) {
