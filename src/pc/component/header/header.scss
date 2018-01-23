@@ -2,6 +2,23 @@ header .contain{
   width:1160px;
   height: 60px;
   margin:0 auto;
+  position:relative;
+
+  .code-view
+  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: aliceblue;
+    font-size: 16px;
+
+    &:hover
+    {
+      cursor:pointer;
+      color:deeppink;
+    }
+
+  }
 }
 
 .head-right a{

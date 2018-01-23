@@ -18,6 +18,18 @@
     color: #999999;
     margin-right:pxToRem(20px);
   }
+
+  .code-view
+  {
+    color: blue;
+    font-size: 16px;
+
+    &:hover
+    {
+      cursor:pointer;
+      color:deeppink;
+    }
+  }
 }
 
 @include fontSize(28px, ".list-header .title");
