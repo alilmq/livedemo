@@ -8,7 +8,7 @@
 
 ## 桌面版
 
-![桌面版](https://player.alicdn.com/img/aliplayer/pclive1.png) ![桌面版](https://player.alicdn.com/aliplayer/img/pclive2.png)
+![桌面版](https://player.alicdn.com/aliplayer/img/pclive1.png) ![桌面版](https://player.alicdn.com/aliplayer/img/pclive2.png)
 
 ## 移动版
 
