@@ -8,11 +8,11 @@
 
 ## 桌面版
 
-![桌面版](https://player.alicdn.com/img/pclive1.png) ![桌面版](https://player.alicdn.com/img/pclive2.png)
+![桌面版](https://player.alicdn.com/img/aliplayer/pclive1.png) ![桌面版](https://player.alicdn.com/aliplayer/img/pclive2.png)
 
 ## 移动版
 
-![移动版](https://player.alicdn.com/img/reacth5live.png)  
+![移动版](https://player.alicdn.com/aliplayer/img/reacth5live.png)  
 
 ## 特性
 
