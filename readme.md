@@ -2,7 +2,7 @@
 
 包含全屏播放、评论、点赞、客户端长连接mqtt、支持在android微信全屏同层播放，解决android微信弹出全屏播放的问题等功能。
 
-下载代码请移步[AliyunVideo](https://github.com/aliyunvideo/AliyunPlayer_Web/tree/master/h5LiveDemo)
+下载代码请移步[AliyunVideo](https://github.com/aliyunvideo/AliyunPlayer_Web/tree/master/multiPlatformLiveDemo)
 
 ## [体验demo](https://player.alicdn.com/aliplayer/)
 
